@@ -1,0 +1,167 @@
+:root {
+  --rotation: 0deg;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "SF Pro Display", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f2;
+}
+
+.clock-wrapper {
+  padding: 20px;
+  margin: 20px;
+  border-radius: 50%;
+  background-color: #fafafa;
+  border: 0px solid #ccc;
+}
+
+.clock {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  border-radius: 50%;
+}
+.clock::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background: #000;
+  z-index: 20;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, 50%);
+}
+.clock::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background: #f00;
+  z-index: 22;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.hands {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+  transform-origin: bottom;
+  border-radius: 5px 5px 0 0;
+}
+.hands.seconds {
+  background-color: #f00;
+  height: 40%;
+  width: 4px;
+  z-index: 13;
+}
+.hands.minutes {
+  background-color: #131313;
+  height: 38%;
+  width: 6px;
+  z-index: 12;
+}
+.hands.hours {
+  background-color: #000;
+  height: 30%;
+  width: 8px;
+  z-index: 11;
+}
+
+.numbers {
+  color: #000;
+  font-size: 0.8rem;
+  position: absolute;
+  font-weight: 500;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%) rotate(var(--rotation));
+  height: 50%;
+  transform-origin: bottom;
+  z-index: 10;
+}
+.numbers::after {
+  font-size: 0.8rem;
+  width: 2px;
+  height: 6px;
+  background-color: #000;
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  transform: translate(-50%);
+  transform-origin: bottom;
+  z-index: 10;
+}
+.numbers.number1 {
+  --rotation: 30deg ;
+}
+.numbers.number2 {
+  --rotation: 60deg ;
+}
+.numbers.number3 {
+  --rotation: 90deg ;
+}
+.numbers.number4 {
+  --rotation: 120deg ;
+}
+.numbers.number5 {
+  --rotation: 150deg ;
+}
+.numbers.number6 {
+  --rotation: 180deg ;
+}
+.numbers.number7 {
+  --rotation: 210deg ;
+}
+.numbers.number8 {
+  --rotation: 240deg ;
+}
+.numbers.number9 {
+  --rotation: 270deg ;
+}
+.numbers.number10 {
+  --rotation: 300deg ;
+}
+.numbers.number11 {
+  --rotation: 330deg ;
+}
+
+.display-wrapper {
+  justify-content: center;
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.current-time {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0;
+}
+
+.time-display {
+  font-size: 3rem;
+  text-align: center;
+  margin: 0;
+  color: #231f20;
+}/*# sourceMappingURL=style.css.map */
